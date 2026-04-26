@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アラーム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>アラーム</h1>
+      <div id="clock"></div>
+    </header>
+
+    <section class="add-alarm">
+      <h2>新しいアラーム</h2>
+      <form id="alarm-form">
+        <div class="form-row">
+          <input type="time" id="alarm-time" required>
+          <input type="text" id="alarm-label" placeholder="ラベル（任意）" maxlength="30">
+        </div>
+        <div class="days-row">
+          <span class="days-label">繰り返し</span>
+          <div class="day-btns">
+            <button type="button" class="day-btn" data-day="0">日</button>
+            <button type="button" class="day-btn" data-day="1">月</button>
+            <button type="button" class="day-btn" data-day="2">火</button>
+            <button type="button" class="day-btn" data-day="3">水</button>
+            <button type="button" class="day-btn" data-day="4">木</button>
+            <button type="button" class="day-btn" data-day="5">金</button>
+            <button type="button" class="day-btn" data-day="6">土</button>
+          </div>
+        </div>
+        <button type="submit" class="btn-add">追加</button>
+      </form>
+    </section>
+
+    <section class="alarm-list">
+      <h2>アラーム一覧</h2>
+      <div id="alarms" class="alarms"></div>
+      <p id="empty-msg" class="empty-msg">アラームがありません</p>
+    </section>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <p class="modal-label" id="modal-label"></p>
+      <p class="modal-time" id="modal-time"></p>
+      <button id="stop-btn" class="btn-stop">止める</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
